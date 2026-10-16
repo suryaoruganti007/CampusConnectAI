@@ -1,0 +1,1 @@
+package com.campusconnect.rag; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface DocumentChunkRepository extends JpaRepository<DocumentChunk,Long>{List<DocumentChunk> findByDocumentIdOrderByChunkIndex(Long id);}

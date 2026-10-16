@@ -1,0 +1,1 @@
+package com.campusconnect.assignment; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface AssignmentRepository extends JpaRepository<Assignment,Long>{List<Assignment> findAllByOrderByDueAtAsc(); List<Assignment> findByCourseIdOrderByDueAtAsc(Long courseId);}

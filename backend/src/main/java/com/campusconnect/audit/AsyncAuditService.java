@@ -1,0 +1,3 @@
+package com.campusconnect.audit;
+import org.slf4j.Logger; import org.slf4j.LoggerFactory; import org.springframework.scheduling.annotation.Async; import org.springframework.stereotype.Service;
+@Service public class AsyncAuditService { private static final Logger log=LoggerFactory.getLogger(AsyncAuditService.class); @Async public void record(String action,String actor,String detail){log.info("AUDIT action={} actor={} detail={}",safe(action),safe(actor),safe(detail));} private String safe(String value){if(value==null)return "unknown";String clean=value.replaceAll("[\r\n]"," ");return clean.substring(0,Math.min(clean.length(),300));} }

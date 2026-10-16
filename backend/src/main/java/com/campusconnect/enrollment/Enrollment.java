@@ -1,0 +1,4 @@
+package com.campusconnect.enrollment;
+import com.campusconnect.course.Course; import com.campusconnect.user.User; import jakarta.persistence.*; import java.time.Instant;
+@Entity @Table(name="enrollments", uniqueConstraints=@UniqueConstraint(columnNames={"course_id","student_id"}))
+public class Enrollment { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; @ManyToOne(optional=false) private Course course; @ManyToOne(optional=false) @JoinColumn(name="student_id") private User student; @Column(nullable=false,updatable=false) private Instant enrolledAt=Instant.now(); protected Enrollment(){} public Enrollment(Course c,User u){course=c;student=u;} public Long getId(){return id;} public Course getCourse(){return course;} public User getStudent(){return student;} public Instant getEnrolledAt(){return enrolledAt;} }

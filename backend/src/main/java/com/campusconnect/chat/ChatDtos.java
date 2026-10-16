@@ -1,0 +1,1 @@
+package com.campusconnect.chat; import jakarta.validation.constraints.*; import java.util.*; public final class ChatDtos {private ChatDtos(){} public record ChatRequest(@NotBlank @Size(max=8000) String message){} public record ChatResponse(String answer,boolean configured,List<Map<String,Object>> sources){}}

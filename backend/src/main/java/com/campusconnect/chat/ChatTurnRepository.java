@@ -1,0 +1,1 @@
+package com.campusconnect.chat; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface ChatTurnRepository extends JpaRepository<ChatTurn,Long>{List<ChatTurn> findTop100ByUserEmailOrderByCreatedAtDesc(String email);}

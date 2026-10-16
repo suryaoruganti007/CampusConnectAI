@@ -1,0 +1,1 @@
+package com.campusconnect.rag; import org.springframework.data.jpa.repository.JpaRepository; import java.util.*; public interface CampusDocumentRepository extends JpaRepository<CampusDocument,Long>{List<CampusDocument> findAllByOrderByUploadedAtDesc();}
